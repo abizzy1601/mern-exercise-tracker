@@ -32,6 +32,7 @@ export default class CreateUsers extends Component {
         console.log(user)
 
         axios.post(`${Calls.baseUrl()}/users/add`, user)
+        alert('yes')
         .then(res => alert(res.data))
         // window.location='/create'
 
