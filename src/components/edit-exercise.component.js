@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
+import Calls from "../Service/Calls"; 
+
 
 
 export default class EditExercise extends Component {
@@ -25,7 +27,7 @@ export default class EditExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/exercises/'+this.props.match.params.id)
+        axios.get(`${Calls.baseUrl()}/exercises/`+this.props.match.params.id)
             .then(res => {
                 this.setState({
                     username: res.data.username,
@@ -33,12 +35,12 @@ export default class EditExercise extends Component {
                     duration: res.data.duration,
                     date: new Date(res.data.date)
                 })
-                .catch(function (error) {
-                    console.log(error);
-                })
+                // .catch(function (error) {
+                //     console.log(error);
+                // })
             })
             
-        axios.get('http://localhost:5000/users/')
+        axios.get(`${Calls.baseUrl()}/users/`)
         .then(res => {
             if (res.data.length > 0) {
                 this.setState({
@@ -83,7 +85,7 @@ export default class EditExercise extends Component {
 
         console.log(exercise)
 
-        axios.post('http://localhost:5000/exercises/update/'+this.props.match.params.id, exercise)
+        axios.post(`${Calls.baseUrl()}/exercises/update/`+this.props.match.params.id, exercise)
         .then(res => console.log(res.data))
 
         window.location = '/';

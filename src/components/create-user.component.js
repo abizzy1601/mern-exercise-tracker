@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Calls from "../Service/Calls"; 
+
 
 export default class CreateUsers extends Component {
     constructor(props) {
@@ -29,14 +31,14 @@ export default class CreateUsers extends Component {
 
         console.log(user)
 
-        axios.post('http://localhost:5000/users/add', user)
-        .then(res => console.log(res.data))
+        axios.post(`${Calls.baseUrl()}/users/add`, user)
+        .then(res => alert(res.data))
+        // window.location='/create'
 
         this.setState({
             username: ''
         })
            
-          
     
 
     }
