@@ -74,7 +74,7 @@ export default class CreateExercise extends Component {
         axios.post(`${Calls.baseUrl()}/exercises/add`, exercise)
         .then(res => alert(res.data))
 
-        // window.location = '/';
+        window.location = '/';
     }
 
     render() {
