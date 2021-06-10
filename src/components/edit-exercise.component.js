@@ -34,9 +34,9 @@ export default class EditExercise extends Component {
                     duration: res.data.duration,
                     date: new Date(res.data.date)
                 })
-                // .catch(function (error) {
-                //     console.log(error);
-                // })
+                .catch(function (error) {
+                    console.log(error);
+                })
             })
             
         axios.get('https://exercise-tracker-backend.abizzy1601.repl.co/users/')

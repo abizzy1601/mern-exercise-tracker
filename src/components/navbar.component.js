@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 export default class Navbar extends Component {
 
-    render() {
-        return (
+    render() { 
+        return (  
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
                 <Link to="/" className="navbar-brand">ExcerTracker</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
