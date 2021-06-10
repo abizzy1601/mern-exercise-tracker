@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
-import Calls from "../Service/Calls"; 
 
 
 
@@ -27,7 +26,7 @@ export default class EditExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${Calls.baseUrl()}/exercises/`+this.props.match.params.id)
+        axios.get('https://exercise-tracker-backend.abizzy1601.repl.co/exercises/'+this.props.match.params.id)
             .then(res => {
                 this.setState({
                     username: res.data.username,
@@ -40,7 +39,7 @@ export default class EditExercise extends Component {
                 // })
             })
             
-        axios.get(`${Calls.baseUrl()}/users/`)
+        axios.get('https://exercise-tracker-backend.abizzy1601.repl.co/users/')
         .then(res => {
             if (res.data.length > 0) {
                 this.setState({
@@ -85,7 +84,7 @@ export default class EditExercise extends Component {
 
         console.log(exercise)
 
-        axios.post(`${Calls.baseUrl()}/exercises/update/`+this.props.match.params.id, exercise)
+        axios.post('https://exercise-tracker-backend.abizzy1601.repl.co'+this.props.match.params.id, exercise)
         .then(res => console.log(res.data))
 
         window.location = '/';

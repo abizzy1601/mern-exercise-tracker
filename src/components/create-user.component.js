@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Calls from "../Service/Calls"; 
 
 
 export default class CreateUsers extends Component {
@@ -31,7 +30,7 @@ export default class CreateUsers extends Component {
 
         console.log(user)
 
-        axios.post(`${Calls.baseUrl()}/users/add`, user)
+        axios.post('https://exercise-tracker-backend.abizzy1601.repl.co/users/add', user)
         alert('yes')
         .then(res => alert(res.data))
         // window.location='/create'

@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-import Calls from "../Service/Calls"; 
 
 export default class Navbar extends Component {
 
